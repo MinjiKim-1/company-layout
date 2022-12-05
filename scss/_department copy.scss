@@ -1,0 +1,125 @@
+.department {
+    .sub_visual {
+        background: url(../img/brand4.jpg) no-repeat bottom/cover;
+    }
+    .division {
+        width: 100%;
+        height: 600px;
+        background: url(../img/bgDIvision.jpg) no-repeat center/contain;
+
+        .div_tree { // 웹에서는 안보이게 숨기기
+            position: absolute;
+            top: -999999999px;
+            opacity: 0;
+            transition: 2s;
+            li {
+                span { // 모든 span에 스타일 설정
+                    display: block;
+                    width: 40%;
+                    height: 50px;
+                    background: #111;
+                    font: bold 13px/50px $mainFont;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 25px;
+                    margin-bottom: 20px;
+                    position: relative; //가상클래스로 라인을 이어줄 것이므로 기준점 설정
+                    &::after {
+                        // 1st Depth, 가장 긴 세로라인. 최상위 span 바닥에 붙은 라인이 span+여백 17개 높이만큼 이어지고, 이어질 span의 중앙까지 이어지도록 span 1개 높이값의 절반을 빼준다.
+                        content: '';
+                        display: block;
+                        width: 1px;
+                        height: calc((50px + 20px) * 17 - (50px/2)); 
+                        background: #aaa;
+                        position: absolute;
+                        top: 50px;
+                        left: 50px;
+                    }
+                }
+                // 2nd Depth
+                // 모든 span에 부여되어있는 라인을 계속 CSS덮어쓰기 하며 수정한다
+                ul li {
+                    span {
+                        background: #666;
+                        transform: translateX(70px); // 들여쓰기 효과
+                        &::before {
+                            // 가로라인. 
+                            content: '';
+                            display: block;
+                            width: 20px;
+                            height: 1px; 
+                            background: #aaa;
+                            position: absolute;
+                            top: 50%;
+                            left: -20px;
+                        }
+                    }
+                    // 세로선 안붙는 항목에서 세로선 지워주기
+                    &:nth-of-type(1) span::after {
+                        display: none;
+                    }
+                    &:nth-of-type(2) span::after {
+                        display: none;
+                    }
+                    // 두번째 세로선 높이값 덮어씌우기
+                    &:nth-of-type(3) span::after {
+                        height: calc((50px + 20px) * 2 - (50px/2)); 
+                    }
+                    // 세번째 세로선 높이값 덮어씌우기
+                    &:nth-of-type(4) span::after {
+                        height: calc((50px + 20px) * 3 - (50px/2)); 
+                    }
+                    // 네번째 세로선 높이값 덮어씌우기
+                    &:nth-of-type(5) span::after {
+                        height: calc((50px + 20px) * 2 - (50px/2)); 
+                    }
+                    // 다섯번째 세로선 높이값 덮어씌우기
+                    &:nth-of-type(6) span::after {
+                        height: calc((50px + 20px) * 3 - (50px/2)); 
+                    }
+                    // 여섯번째 세로선 높이값 덮어씌우기
+                    &:nth-of-type(7) span::after {
+                        height: calc((50px + 20px) * 2 - (50px/2)); 
+                    }
+                    // 3rd Depth 
+                    ul li { 
+                        span {
+                            background: #999;
+                            transform: translateX(140px); // 들여쓰기 효과
+                            &::after { // 3번째 목록은 세로선이 필요없으므로 모두 제거 
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* @@@ 미디어 쿼리 @@@ */
+
+@media screen and (max-width: $tablet) {
+    .department {
+        .division {
+            height: 60vw;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .department {
+        .division {
+            background: none;
+            height: auto; // 자동으로 확장되도록 고정되어있던 높이값 초기화
+            .div_tree {
+                position: relative;
+                top: 0;
+                opacity: 1;
+            }
+        }
+    }
+}

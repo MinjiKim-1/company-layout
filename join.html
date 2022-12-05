@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/579590574d.js" crossorigin="anonymous"></script>
+    <script defer src="js/main.js"></script>
+</head>
+ 
+<body> 
+    <!-- 모든 페이지에 기본으로 들어갈 Header와 Footer만 남기고다 날림 -->
+    <!-- Header -->
+    <header id="header_sub"> 
+    <!-- id는 하나여야만 하므로 서브페이지용 header와 footer의 id는 새롭게 네이밍 -->
+        <div class="inner">
+            <h1><a href="index.html">DCODELAB</a></h1>
+            <!-- 웹용 GNB -->
+            <nav class="menuWeb">
+                <ul id="gnb">
+                    <li><a href="#">DEPARTMENT</a></li>
+                    <li><a href="#">YOUTUBE</a></li>
+                    <li><a href="#">COMMUNITY</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">LOCATION</a></li>
+                </ul>
+                <ul class="util">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </nav>
+            <!-- 모바일용 GNB -->
+            <a href="#" class="btnCall">
+                <span>메뉴호출</span>
+            </a>
+
+            <nav class="menuMo">
+                <h1>
+                    <a href="">DCODELAB</a>
+                    
+                    <span>UI/UX DEVELOPMENT INSTITUTE</span>
+                </h1>
+                <ul id="gnbMo">
+                    <li><a href="#">DEPARTMENT</a></li>
+                    <li><a href="#">YOUTUBE</a></li>
+                    <li><a href="#">COMMUNITY</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">LOCATION</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content join">
+        <!-- .content의 스타일은 유지하고 서브페이지의 두번째 클래스를 부여해 서브페이지만의 스타일을 추가로 부여할 수 있음 -->
+
+        <div class="sub_visual"></div>
+        <div class="inner">
+            <h1>JOIN <span>회원가입 페이지</span></h1>
+            <!-- 컨텐츠가 들어가는 부분 -->
+            <form action="index.html"></form> <!-- 입력 완료 뒤 이동 -->
+            <fieldset> <!-- form태그의 inner같은 역할을 하는 시멘틱 태그 -->
+                <legend class="hidden">회원가입 양식 폼</legend> <!-- 문서의 h1, 테이블의 캡션처럼 이 폼을 설명하는 역할 -->
+                <h2><label for="terms">POLICY</label></h2>
+                <textarea name="terms" id="terms" cols="30" rows="10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam illo amet possimus doloremque neque quisquam earum praesentium, animi quasi expedita voluptate accusantium quos minus nulla magnam consectetur laborum. Ducimus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam illo amet possimus doloremque neque quisquam earum praesentium, animi quasi expedita voluptate accusantium quos minus nulla magnam consectetur laborum. Ducimus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam illo amet possimus doloremque neque quisquam earum praesentium, animi quasi expedita voluptate accusantium quos minus nulla magnam consectetur laborum. Ducimus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam illo amet possimus doloremque neque quisquam earum praesentium, animi quasi expedita voluptate accusantium quos minus nulla magnam consectetur laborum. Ducimus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam illo amet possimus doloremque neque quisquam earum praesentium, animi quasi expedita voluptate accusantium quos minus nulla magnam consectetur laborum. Ducimus.
+                </textarea>
+                <div class="agreement">
+                    <input type="checkbox" name="terms" id="agree">
+                    <label for="agree">약관에 동의합니다</label>
+                </div>
+                <h2>MEMBER INFORMATION</h2>
+                <table>
+                    <caption class="hidden">회원정보 입력양식 테이블</caption>
+                    <tr>
+                        <th scope="row">
+                            <label for="id">USER ID</label>
+                        </th>
+                        <td>
+                            <input type="text" name="id" id="id" required placeholder= "아이디를 입력해 주세요">
+                            <!-- 필수입력 폼일 경우 required 삽입 -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="pwd1">PASSWORD</label>
+                        </th>
+                        <td>
+                            <input type="password" name="pwd1" id="pwd1" required placeholder="비밀번호를 입력해 주십시오">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="pwd2">RE PASSWORD</label>
+                        </th>
+                        <td>
+                            <input type="password" name="pwd2" id="pwd2" required placeholder="비밀번호를 입력해 주십시오">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">HOBBY</th>
+                        <td>
+                            <!-- name - 백앤드로 보낼 때 사용하는 값 -->
+                            <!-- id - label의 for와 이어주는 값, css에서 쓰기도 함 -->
+                            <!-- value - js 등 스크립트로 활용시 쓰는 값 -->
+                            <label for="game">
+                                <input type="checkbox" name="hobby" id="game" value="game">GAME
+                            </label>
+                            <label for="music">
+                                <input type="checkbox" name="hobby" id="music" value="music">MUSIC
+                            </label>
+                            <label for="read">
+                                <input type="checkbox" name="hobby" id="read" value="read">READING
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">GENDER</th>
+                        <td>
+                            <label for="male">
+                                <input type="radio" name="gender" id="male" value="male">MAN
+                            </label>
+                            <label for="female">
+                                <input type="radio" name="gender" id="female" value="female">WOMAN
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="email">E-MAIL</label>
+                        </th>
+                        <td>
+                            <input type="text" name="" id="email" placeholder="이메일 주소를 입력해 주세요">
+                            <select name="company" id="company">
+                                <option value="">선택하세요</option>
+                                <option value="naver">@naver.com</option>
+                                <option value="daum">@hanmail.net</option>
+                                <option value="nate">@nate.com</option>
+                            </select>
+                        </td>
+                    </tr>            
+                    <tr>
+                        <th scope="row">
+                            <label for="comments">COMMENTS</label>
+                        </th>
+                        <td>
+                            <textarea name="comments" id="comments" cols="30" rows="10" placeholder="남기는 말씀을 써주세요"></textarea>
+                        </td>
+                    </tr>
+                    <!-- 버튼영역의 테이블 행을 합친다 -->
+                    <th colspan="2">
+                        <input type="reset" value="CANCEL">
+                        <input type="submit" value="SUBMIT">
+                    </th>
+                </table>
+            </fieldset>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer_sub">
+        <div class="inner">
+            <h1>DCODELAB</h1>
+            <ul>
+                <li><a href="#">Policy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Customer</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+            <address>
+                ADDRESS : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, in!
+                TEL : +82 -032-333-444 FAX : +82-032-333-4434
+            </address>
+            <!-- Copyright -->
+            <p>Colyright &copy; 2022 DCODELAB ALL Right reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
